@@ -79,7 +79,7 @@ function displayMovieDetails(details) {
         </div>
     `;
 
-    // Add event listener to favorite button
+    
     const favBtn = resultGrid.querySelector(".fav-btn");
     favBtn.addEventListener("click", () => addToFavorites(details));
 }
@@ -98,7 +98,7 @@ function saveFavorites(favorites) {
 
 function addToFavorites(movie) {
     const favorites = getFavorites();
-    // Prevent duplicates
+  
     if (!favorites.some(fav => fav.imdbID === movie.imdbID)) {
         favorites.push(movie);
         saveFavorites(favorites);
@@ -139,4 +139,5 @@ function removeFromFavorites(id) {
 movieSearchBox.addEventListener("keyup", findMovies);
 movieSearchBox.addEventListener("click", findMovies);
 document.addEventListener("DOMContentLoaded", displayFavorites);
+
 
